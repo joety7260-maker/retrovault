@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RetroVault // Curated Premium Sneaker Allocations</title>
+  <title>Trainer Warz // Curated Premium Sneaker Allocations</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -14,6 +14,10 @@
       box-shadow: 0 0 30px -5px rgba(34, 211, 238, 0.15);
       border-color: rgba(34, 211, 238, 0.4);
     }
+    .bento-glow-gold:hover {
+      box-shadow: 0 0 30px -5px rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.4);
+    }
     .bento-glow-purple:hover {
       box-shadow: 0 0 30px -5px rgba(168, 85, 247, 0.15);
       border-color: rgba(168, 85, 247, 0.4);
@@ -22,12 +26,14 @@
 </head>
 <body class="text-zinc-300 antialiased selection:bg-cyan-500 selection:text-black">
 
-  <!-- PREMIUM GLOBAL NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900/80 px-4 sm:px-8 py-4">
+  <!-- PREMIUM GLOBAL NAVIGATION WITH IMAGE LOGO -->
+  <nav class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900/80 px-4 sm:px-8 py-3">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <span class="font-display text-3xl font-black tracking-tight text-white uppercase">
-          RETRO<span class="text-cyan-400">VAULT</span>
+        <!-- Logo Image Integration from 1000100729.png -->
+        <img src="1000100729.png" alt="Trainer Warz Logo" class="h-12 w-auto object-contain rounded-sm">
+        <span class="font-display text-2xl font-black tracking-tight text-white uppercase hidden xs:block">
+          TRAINER<span class="text-cyan-400">WARZ</span>
         </span>
         <span class="hidden sm:inline-block text-[10px] font-mono tracking-widest uppercase bg-zinc-900 text-zinc-500 border border-zinc-800 px-2 py-0.5 rounded">
           v2.0_pro
@@ -46,8 +52,8 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20">
     <header class="mb-16 md:mb-24 relative">
       <div class="absolute -top-10 -left-10 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[11px] font-mono tracking-wider text-cyan-400 uppercase mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> Verified Allocation Hub
+      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[11px] font-mono tracking-wider text-amber-400 uppercase mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Trainer Warz Official Hub
       </div>
       <h1 class="font-display text-6xl sm:text-8xl font-black uppercase tracking-tighter text-white leading-none max-w-4xl">
         STRICTLY RETRO.<br class="hidden sm:inline"> ZERO CLUTTER.
@@ -93,7 +99,6 @@
                 </h3>
                 <p class="text-xs text-zinc-400 font-mono mt-2">SKU // DQ3989-100</p>
               </div>
-              <!-- PREMIUM TECHNICAL SVG ASSET -->
               <div class="text-zinc-700 group-hover:text-cyan-500/20 transition-colors duration-300 pr-4 self-end sm:self-auto">
                 <svg class="w-24 h-24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M3 17h18M3 17l1.5-4h4.5l1.5-2.5L14 10h4l3 3.5v3.5M7 13v4M11 13v4M15 13v4" />
@@ -139,12 +144,12 @@
           </div>
         </div>
 
-        <!-- CARD 3: COMPACT BENTO (ADIDAS ZX 8000) -->
-        <div class="bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 ease-out bento-glow group">
+        <!-- CARD 3: COMPACT BENTO (ADIDAS ZX 8000) WITH GOLD CROWN GLOW -->
+        <div class="bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 ease-out bento-glow-gold group">
           <div>
             <div class="flex justify-between items-center mb-6">
-              <span class="bg-zinc-800 text-zinc-400 border border-zinc-700/50 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-md">
-                Retro Classic
+              <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-md">
+                Crown Classic
               </span>
               <span class="text-emerald-400 font-mono text-sm font-bold bg-emerald-500/5 border border-emerald-500/10 px-2.5 py-0.5 rounded">
                 $130.00
@@ -153,7 +158,7 @@
             
             <div class="my-4">
               <p class="text-[11px] font-mono uppercase tracking-widest text-zinc-500">Adidas Originals</p>
-              <h3 class="font-display text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mt-1 group-hover:text-cyan-400 transition-colors duration-200">
+              <h3 class="font-display text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mt-1 group-hover:text-amber-400 transition-colors duration-200">
                 ZX 8000 'Aqua'
               </h3>
               <p class="text-xs text-zinc-400 font-mono mt-1">Archive ID // EG8784</p>
@@ -161,7 +166,7 @@
           </div>
 
           <div class="mt-8">
-            <a href="https://www.adidas.com" target="_blank" class="w-full inline-flex items-center justify-center bg-zinc-900 hover:bg-cyan-400 text-zinc-300 hover:text-black font-mono font-bold uppercase text-xs tracking-wider py-4 px-4 rounded-xl transition-all duration-200 border border-zinc-800 hover:border-transparent min-h-[48px]">
+            <a href="https://www.adidas.com" target="_blank" class="w-full inline-flex items-center justify-center bg-zinc-900 hover:bg-amber-400 text-zinc-300 hover:text-black font-mono font-bold uppercase text-xs tracking-wider py-4 px-4 rounded-xl transition-all duration-200 border border-zinc-800 hover:border-transparent min-h-[48px]">
               Check Vault Supply
             </a>
           </div>
@@ -175,13 +180,13 @@
       <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
       
       <div class="max-w-3xl mx-auto bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-purple-500"></div>
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-amber-500"></div>
         
         <div class="mb-8">
           <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">// MARKET INTERACTION TERMINAL</p>
           <h2 class="font-display text-3xl sm:text-4xl font-black uppercase text-white tracking-tight mt-1">Inject Liquidity / List Your Pair</h2>
           <p class="text-zinc-400 text-xs sm:text-sm mt-2 font-normal">
-            No modern filler. Authenticated structural vintage allocations only. Fill configuration metrics below.
+            Authenticated structural vintage allocations only. Fill configuration metrics below to list on the Trainer Warz network.
           </p>
         </div>
 
@@ -230,8 +235,7 @@
         </form>
       </div>
     </section>
-    
-</main>
+  </main>
 
 </body>
 </html>
