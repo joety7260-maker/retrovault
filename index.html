@@ -1,241 +1,353 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trainer Warz // Curated Premium Sneaker Allocations</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Trainer Warz — Premium UK Sneaker Community & Allocations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030303; }
-    .font-display { font-family: 'Barlow Condensed', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', sans-serif; }
-    .bento-glow:hover {
-      box-shadow: 0 0 30px -5px rgba(34, 211, 238, 0.15);
-      border-color: rgba(34, 211, 238, 0.4);
+    :root {
+      --teal: #5de8d8;
+      --blue: #4ab8f0;
+      --purple: #b08fff;
+      --gold: #f5a800;
+      --green: #00ff9d;
+      --red: #ff4d6d;
+      --text: #f0f0f0;
+      --muted: #7a7a90;
+      --iridescent: linear-gradient(135deg, #a8edea, #5de8d8, #4ab8f0, #7b9fff, #b08fff, #5de8d8);
     }
-    .bento-glow-gold:hover {
-      box-shadow: 0 0 30px -5px rgba(245, 158, 11, 0.15);
-      border-color: rgba(245, 158, 11, 0.4);
+    
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    
+    body {
+      background:#000;
+      color:var(--text);
+      font-family:'Barlow',sans-serif;
+      overflow-x:hidden;
     }
-    .bento-glow-purple:hover {
-      box-shadow: 0 0 30px -5px rgba(168, 85, 247, 0.15);
-      border-color: rgba(168, 85, 247, 0.4);
+    
+    body::before {
+      content:'';
+      position:fixed; inset:0;
+      background: linear-gradient(160deg,
+        rgba(0,18,38,1) 0%, rgba(0,8,28,1) 20%,
+        rgba(8,0,35,1) 40%, rgba(18,0,45,1) 55%,
+        rgba(5,8,32,1) 70%, rgba(0,18,38,1) 85%,
+        rgba(4,0,28,1) 100%);
+      z-index:-2;
     }
-  </style>
-</head>
-<body class="text-zinc-300 antialiased selection:bg-cyan-500 selection:text-black">
+    
+    body::after {
+      content:'';
+      position:fixed; inset:0;
+      background:
+        radial-gradient(ellipse 80% 60% at 15% 25%, rgba(93,232,216,0.1) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 70% at 85% 15%, rgba(74,184,240,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 50% at 50% 55%, rgba(123,100,255,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 45% at 25% 85%, rgba(176,143,255,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 65% at 80% 85%, rgba(93,232,216,0.07) 0%, transparent 50%);
+      pointer-events:none; z-index:-1;
+      animation:bgPulse 18s ease-in-out infinite alternate;
+    }
+    
+    @keyframes bgPulse {
+      0%   { opacity:1; filter:hue-rotate(0deg); }
+      50%  { opacity:0.75; filter:hue-rotate(15deg); }
+      100% { opacity:1; filter:hue-rotate(-8deg); }
+    }
 
-  <!-- PREMIUM GLOBAL NAVIGATION WITH IMAGE LOGO -->
-  <nav class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-900/80 px-4 sm:px-8 py-3">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <div class="flex items-center gap-3">
-        <!-- Logo Image Integration from 1000100729.png -->
-        <img src="1000100729.png" alt="Trainer Warz Logo" class="h-12 w-auto object-contain rounded-sm">
-        <span class="font-display text-2xl font-black tracking-tight text-white uppercase hidden xs:block">
-          TRAINER<span class="text-cyan-400">WARZ</span>
-        </span>
-        <span class="hidden sm:inline-block text-[10px] font-mono tracking-widest uppercase bg-zinc-900 text-zinc-500 border border-zinc-800 px-2 py-0.5 rounded">
-          v2.0_pro
-        </span>
-      </div>
-      <div class="flex items-center gap-4 sm:gap-8 text-xs font-mono tracking-wider uppercase text-zinc-400">
-        <a href="#drops" class="hover:text-white transition-colors duration-200">/drops</a>
-        <a href="#marketplace" class="hover:text-white transition-colors duration-200">/list-pair</a>
-        <span class="hidden md:inline-block text-zinc-600">|</span>
-        <span class="hidden md:inline-block text-[11px] text-zinc-500">EST. 2014</span>
-      </div>
-    </div>
-  </nav>
+    ::-webkit-scrollbar { width:4px; }
+    ::-webkit-scrollbar-track { background:#000; }
+    ::-webkit-scrollbar-thumb { background:linear-gradient(var(--teal),var(--purple)); }
 
-  <!-- HERO ARCHITECTURE -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-20">
-    <header class="mb-16 md:mb-24 relative">
-      <div class="absolute -top-10 -left-10 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[11px] font-mono tracking-wider text-amber-400 uppercase mb-4">
-        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Trainer Warz Official Hub
-      </div>
-      <h1 class="font-display text-6xl sm:text-8xl font-black uppercase tracking-tighter text-white leading-none max-w-4xl">
-        STRICTLY RETRO.<br class="hidden sm:inline"> ZERO CLUTTER.
-      </h1>
-      <p class="text-zinc-400 text-sm sm:text-base max-w-xl mt-6 font-normal leading-relaxed">
-        Engineered for deep collectors. Eliminating template noise to deliver ultra-clean tier-1 allocations, 90s archive staples, and direct community flow.
-      </p>
-    </header>
+    /* ── NAV ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:600;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 40px; height:72px;
+      background:rgba(0,5,18,0.65);
+      backdrop-filter:blur(28px) saturate(200%);
+      -webkit-backdrop-filter:blur(28px) saturate(200%);
+      border-bottom:1px solid rgba(93,232,216,0.1);
+    }
+    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav-logo img { height:44px; width:auto; animation:navGlow 6s ease-in-out infinite; object-contain: contain; }
+    .nav-logo span { font-family:'Barlow Condensed', sans-serif; font-size:22px; font-weight:900; tracking: -0.5px; color:#fff; text-transform:uppercase; }
+    .nav-logo span em { color:var(--teal); font-style:normal; }
+    
+    @keyframes navGlow {
+      0%,100%{filter:drop-shadow(0 0 8px rgba(93,232,216,0.4));}
+      50%{filter:drop-shadow(0 0 14px rgba(176,143,255,0.5));}
+    }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a {
+      font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700;
+      letter-spacing:2.5px; text-transform:uppercase; color:var(--muted);
+      text-decoration:none; transition:color 0.2s;
+    }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-cta {
+      background:linear-gradient(135deg,rgba(93,232,216,0.18),rgba(74,184,240,0.18));
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(93,232,216,0.38);
+      color:var(--teal); font-family:'Barlow Condensed',sans-serif;
+      font-size:12px; font-weight:800; letter-spacing:2.5px; text-transform:uppercase;
+      padding:9px 22px; cursor:pointer;
+      clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+      transition:all 0.2s;
+    }
+    .nav-cta:hover { box-shadow:0 0 22px rgba(93,232,216,0.25); border-color:rgba(93,232,216,0.7); }
 
-    <!-- ASYMMETRICAL BENTO GRID DROPS FEED -->
-    <section id="drops" class="mb-24 sm:mb-36">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-        <div>
-          <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">// ALLOCATION MONITOR</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-black uppercase tracking-tight text-white mt-1">Live Premium Pipeline</h2>
-        </div>
-        <div class="h-px bg-zinc-900 flex-1 mx-4 hidden lg:block"></div>
-        <div class="text-xs font-mono text-zinc-400 bg-zinc-900/50 border border-zinc-800 px-3 py-1.5 rounded-md self-start sm:self-auto">
-          Active Sessions: <span class="text-emerald-400 font-bold">Stable</span>
-        </div>
-      </div>
+    /* ── HERO ── */
+    .hero {
+      min-height:100vh; display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      position:relative; overflow:hidden;
+      padding:120px 40px 80px; text-align:center;
+    }
+    .hero-grid {
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(rgba(93,232,216,0.04) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(93,232,216,0.04) 1px,transparent 1px);
+      background-size:55px 55px;
+      mask-image:radial-gradient(ellipse at center,black 15%,transparent 72%);
+      -webkit-mask-image:radial-gradient(ellipse at center,black 15%,transparent 72%);
+    }
+    .orb { position:absolute; border-radius:50%; filter:blur(90px); animation:float 12s ease-in-out infinite; pointer-events:none; }
+    .orb1 { width:420px;height:420px;background:rgba(93,232,216,0.08);top:-5%;left:-5%;animation-delay:0s; }
+    .orb2 { width:500px;height:500px;background:rgba(74,184,240,0.06);top:10%;right:-8%;animation-delay:-5s; }
+    .orb3 { width:320px;height:320px;background:rgba(176,143,255,0.07);bottom:5%;left:30%;animation-delay:-9s; }
+    @keyframes float { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-28px) scale(1.03);} }
 
-      <!-- BENTO LAYOUT ENGINE -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- CARD 1: FEATURED BENTO ALLOCATION (NIKE AIR MAX 1) -->
-        <div class="lg:col-span-2 bg-gradient-to-br from-zinc-900/80 to-zinc-950 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 ease-out bento-glow group min-h-[380px]">
-          <div>
-            <div class="flex justify-between items-center mb-6">
-              <span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-md">
-                Priority Allocation
-              </span>
-              <span class="text-emerald-400 font-mono text-sm font-bold bg-emerald-500/5 border border-emerald-500/10 px-2.5 py-0.5 rounded">
-                $180.00 USD
-              </span>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6 my-4">
-              <div>
-                <p class="text-[11px] font-mono uppercase tracking-widest text-zinc-500">Nike Sportswear</p>
-                <h3 class="font-display text-3xl sm:text-5xl font-black text-white uppercase tracking-tight mt-1 group-hover:text-cyan-400 transition-colors duration-200">
-                  Air Max 1 'Big Bubble'
-                </h3>
-                <p class="text-xs text-zinc-400 font-mono mt-2">SKU // DQ3989-100</p>
-              </div>
-              <div class="text-zinc-700 group-hover:text-cyan-500/20 transition-colors duration-300 pr-4 self-end sm:self-auto">
-                <svg class="w-24 h-24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M3 17h18M3 17l1.5-4h4.5l1.5-2.5L14 10h4l3 3.5v3.5M7 13v4M11 13v4M15 13v4" />
-                  <circle cx="17.5" cy="17" r="1.5" />
-                  <circle cx="6.5" cy="17" r="1.5" />
-                </svg>
-              </div>
-            </div>
-          </div>
+    .hero-logo { position:relative; z-index:2; animation:fadeUp 1s ease both; margin-bottom: 20px; }
+    .hero-logo img { width:clamp(280px,38vw,480px); height:auto; animation:logoGlow 6s ease-in-out infinite; }
+    @keyframes logoGlow {
+      0%,100%{filter:drop-shadow(0 0 28px rgba(93,232,216,0.35)) drop-shadow(0 16px 50px rgba(0,0,0,0.7));}
+      33%{filter:drop-shadow(0 0 38px rgba(74,184,240,0.45)) drop-shadow(0 16px 50px rgba(0,0,0,0.7));}
+      66%{filter:drop-shadow(0 0 44px rgba(176,143,255,0.4)) drop-shadow(0 16px 50px rgba(0,0,0,0.7));}
+    }
+    .hero-tag {
+      position:relative; z-index:2; margin-top:4px;
+      font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:700;
+      letter-spacing:5px; text-transform:uppercase; color:var(--muted);
+      animation:fadeUp 1s ease 0.15s both;
+    }
+    .hero-sub {
+      position:relative; z-index:2; font-size:15px; color:var(--muted);
+      max-width:520px; line-height:1.75; margin-top:16px;
+      animation:fadeUp 1s ease 0.25s both;
+    }
+    .hero-sub strong { color:var(--teal); font-weight:600; }
+    .hero-btns { position:relative; z-index:2; display:flex; gap:16px; margin-top:32px; animation:fadeUp 1s ease 0.38s both; }
 
-          <div class="mt-6">
-            <a href="https://www.nike.com" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center bg-zinc-900 hover:bg-cyan-400 text-zinc-300 hover:text-black font-mono font-bold uppercase text-xs tracking-wider py-4 px-8 rounded-xl transition-all duration-200 border border-zinc-800 hover:border-transparent min-h-[48px]">
-              Query Retail Allocation Engine &rarr;
-            </a>
-          </div>
-        </div>
+    /* ── RAFFLE HERO PILL ── */
+    .raffle-live-pill {
+      position:relative; z-index:2;
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(255,77,109,0.12);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,77,109,0.3);
+      padding:8px 20px; margin-bottom:20px;
+      clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+      animation:fadeUp 1s ease both, pillPulse 2s ease-in-out infinite;
+    }
+    @keyframes pillPulse {
+      0%,100%{box-shadow:0 0 0 0 rgba(255,77,109,0);}
+      50%{box-shadow:0 0 20px 4px rgba(255,77,109,0.15);}
+    }
+    .pill-dot { width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.2;} }
+    .pill-text { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:var(--red); }
 
-        <!-- CARD 2: COMPACT BENTO (ASICS MITSUI) -->
-        <div class="bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 ease-out bento-glow-purple group">
-          <div>
-            <div class="flex justify-between items-center mb-6">
-              <span class="bg-purple-500/10 text-purple-400 border border-purple-500/20 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-md">
-                Archive Tier
-              </span>
-              <span class="text-emerald-400 font-mono text-sm font-bold bg-emerald-500/5 border border-emerald-500/10 px-2.5 py-0.5 rounded">
-                $140.00
-              </span>
-            </div>
-            
-            <div class="my-4">
-              <p class="text-[11px] font-mono uppercase tracking-widest text-zinc-500">ASICS Tiger</p>
-              <h3 class="font-display text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mt-1 group-hover:text-purple-400 transition-colors duration-200">
-                Gel-Lyte III OG 'Mitsui'
-              </h3>
-              <p class="text-xs text-zinc-400 font-mono mt-1">Archive ID // 1201A164-100</p>
-            </div>
-          </div>
+    @keyframes fadeUp { from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
 
-          <div class="mt-8">
-            <a href="https://www.asics.com" target="_blank" class="w-full inline-flex items-center justify-center bg-zinc-900 hover:bg-purple-400 text-zinc-300 hover:text-black font-mono font-bold uppercase text-xs tracking-wider py-4 px-4 rounded-xl transition-all duration-200 border border-zinc-800 hover:border-transparent min-h-[48px]">
-              Check Vault Supply
-            </a>
-          </div>
-        </div>
+    /* ── BUTTONS ── */
+    .btn {
+      font-family:'Barlow Condensed',sans-serif; font-size:13px; font-weight:800;
+      letter-spacing:2.5px; text-transform:uppercase; padding:14px 32px; cursor:pointer;
+      clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+      transition:all 0.25s; border:none; text-decoration:none; display:inline-block;
+    }
+    .btn-teal {
+      background:linear-gradient(135deg,rgba(93,232,216,0.18),rgba(74,184,240,0.15));
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(93,232,216,0.42); color:var(--teal);
+    }
+    .btn-teal:hover { border-color:rgba(93,232,216,0.8); box-shadow:0 0 28px rgba(93,232,216,0.22); transform:translateY(-2px); }
+    .btn-ghost {
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.6);
+    }
+    .btn-ghost:hover { border-color:rgba(176,143,255,0.45); color:var(--purple); transform:translateY(-2px); }
+    .btn-raffle {
+      background:linear-gradient(135deg,rgba(255,77,109,0.22),rgba(255,100,80,0.18));
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,77,109,0.45); color:var(--red);
+      font-size:14px; padding:16px 40px;
+    }
+    .btn-raffle:hover { box-shadow:0 0 32px rgba(255,77,109,0.3); border-color:rgba(255,77,109,0.8); transform:translateY(-2px); }
 
-        <!-- CARD 3: COMPACT BENTO (ADIDAS ZX 8000) WITH GOLD CROWN GLOW -->
-        <div class="bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 ease-out bento-glow-gold group">
-          <div>
-            <div class="flex justify-between items-center mb-6">
-              <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-md">
-                Crown Classic
-              </span>
-              <span class="text-emerald-400 font-mono text-sm font-bold bg-emerald-500/5 border border-emerald-500/10 px-2.5 py-0.5 rounded">
-                $130.00
-              </span>
-            </div>
-            
-            <div class="my-4">
-              <p class="text-[11px] font-mono uppercase tracking-widest text-zinc-500">Adidas Originals</p>
-              <h3 class="font-display text-2xl sm:text-3xl font-black text-white uppercase tracking-tight mt-1 group-hover:text-amber-400 transition-colors duration-200">
-                ZX 8000 'Aqua'
-              </h3>
-              <p class="text-xs text-zinc-400 font-mono mt-1">Archive ID // EG8784</p>
-            </div>
-          </div>
+    /* ── TICKER ── */
+    .ticker {
+      background:linear-gradient(90deg,rgba(93,232,216,0.06),rgba(74,184,240,0.1),rgba(176,143,255,0.08),rgba(93,232,216,0.06));
+      backdrop-filter:blur(10px);
+      border-top:1px solid rgba(93,232,216,0.12);
+      border-bottom:1px solid rgba(93,232,216,0.12);
+      padding:14px 0; overflow:hidden; white-space:nowrap;
+    }
+    .ticker-track { display:inline-flex; animation:tickScroll 28s linear infinite; }
+    .ticker-item { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.85); padding:0 36px; }
+    @keyframes tickScroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
 
-          <div class="mt-8">
-            <a href="https://www.adidas.com" target="_blank" class="w-full inline-flex items-center justify-center bg-zinc-900 hover:bg-amber-400 text-zinc-300 hover:text-black font-mono font-bold uppercase text-xs tracking-wider py-4 px-4 rounded-xl transition-all duration-200 border border-zinc-800 hover:border-transparent min-h-[48px]">
-              Check Vault Supply
-            </a>
-          </div>
-        </div>
+    /* ── SECTION SHELL ── */
+    .wrap { padding:100px 40px; max-width:1280px; margin:0 auto; }
+    .s-label {
+      font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700;
+      letter-spacing:5px; text-transform:uppercase; color:var(--teal);
+      margin-bottom:10px; display:flex; align-items:center; gap:10px;
+    }
+    .s-label::before { content:''; display:block; width:22px; height:1px; background:var(--teal); }
+    .s-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,5.5vw,76px); line-height:1; color:#fff; margin-bottom:40px; }
 
-      </div>
-    </section>
+    /* ── GLASS CARD BASE ── */
+    .gc {
+      background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01));
+      backdrop-filter:blur(22px) saturate(180%);
+      -webkit-backdrop-filter:blur(22px) saturate(180%);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:4px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.05), 0 20px 60px rgba(0,0,0,0.35);
+      transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gc:hover { border-color:rgba(93,232,216,0.25); transform:translateY(-4px); box-shadow:inset 0 1px 0 rgba(255,255,255,0.08),0 28px 70px rgba(0,0,0,0.45),0 0 40px rgba(93,232,216,0.05); }
 
-    <!-- PREMIUM HIGH-CONTRAST ACCESSIBILITY FORM -->
-    <section id="marketplace" class="border-t border-zinc-900 pt-16 sm:pt-24 relative">
-      <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none"></div>
-      
-      <div class="max-w-3xl mx-auto bg-zinc-950 border border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 to-amber-500"></div>
-        
-        <div class="mb-8">
-          <p class="text-xs font-mono uppercase tracking-widest text-zinc-500">// MARKET INTERACTION TERMINAL</p>
-          <h2 class="font-display text-3xl sm:text-4xl font-black uppercase text-white tracking-tight mt-1">Inject Liquidity / List Your Pair</h2>
-          <p class="text-zinc-400 text-xs sm:text-sm mt-2 font-normal">
-            Authenticated structural vintage allocations only. Fill configuration metrics below to list on the Trainer Warz network.
-          </p>
-        </div>
+    /* ── RAFFLE SECTION ── */
+    .raffle-section {
+      background:linear-gradient(135deg,rgba(255,77,109,0.06),rgba(93,232,216,0.03),rgba(176,143,255,0.05));
+      backdrop-filter:blur(28px) saturate(200%);
+      -webkit-backdrop-filter:blur(28px) saturate(200%);
+      border:1px solid rgba(255,77,109,0.15);
+      border-radius:4px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.06), 0 30px 80px rgba(0,0,0,0.45);
+      padding:0; overflow:hidden;
+    }
+    .raffle-top {
+      display:grid; grid-template-columns:1.3fr 1fr; min-height:460px;
+    }
+    @media (max-width: 868px) {
+      .raffle-top { grid-template-columns: 1fr; }
+      .raffle-info { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    }
+    .raffle-info { padding:56px; border-right:1px solid rgba(255,255,255,0.06); }
+    .raffle-visual {
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      padding:48px; position:relative; overflow:hidden;
+      background:linear-gradient(135deg,rgba(255,77,109,0.06),rgba(176,143,255,0.06));
+    }
+    .raffle-visual::before {
+      content:'🎟️'; position:absolute; font-size:220px; opacity:0.03;
+      top:50%; left:50%; transform:translate(-50%,-50%);
+      pointer-events:none;
+    }
+    .raffle-shoe-big { font-size:110px; display:block; margin-bottom:12px; filter:drop-shadow(0 10px 30px rgba(255,77,109,0.25)); animation:float 6s ease-in-out infinite; }
+    .raffle-price-big {
+      font-family:'Bebas Neue',sans-serif; font-size:90px; line-height:1;
+      background:linear-gradient(135deg,var(--gold),#ff9d00);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .raffle-price-label { font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
 
-        <form class="space-y-6" onsubmit="event.preventDefault(); alert('Terminal Layout Complete! Core submission state is stable and ready to connect to your backend database infrastructure.');">
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-400 mb-2">Sneaker Taxonomy / Name</label>
-              <input type="text" placeholder="e.g., Air Max 95 Neon" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-400 transition-colors focus:ring-1 focus:ring-cyan-400 min-h-[48px]" required>
-            </div>
-            <div>
-              <label class="block text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-400 mb-2">Style Code / SKU Validation</label>
-              <input type="text" placeholder="e.g., CT1689-001" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-400 transition-colors focus:ring-1 focus:ring-cyan-400 min-h-[48px]">
-            </div>
-          </div>
+    .raffle-name { font-family:'Bebas Neue',sans-serif; font-size:56px; line-height:1; color:#fff; margin:12px 0 6px; }
+    .raffle-brand { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+    .raffle-desc { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:24px; max-width:440px; }
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <label class="block text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-400 mb-2">Condition Grading Matrix</label>
-              <div class="relative">
-                <select class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3.5 text-sm text-zinc-300 focus:outline-none focus:border-cyan-400 transition-colors focus:ring-1 focus:ring-cyan-400 appearance-none min-h-[48px]">
-                  <option>Deadstock (DS)</option>
-                  <option>VNDS / Near Deadstock</option>
-                  <option>Worn / Archive Condition</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-zinc-500">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <label class="block text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-400 mb-2">Asking Evaluation ($)</label>
-              <input type="number" placeholder="200" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-400 transition-colors focus:ring-1 focus:ring-cyan-400 min-h-[48px]" required>
-            </div>
-            <div>
-              <label class="block text-[11px] font-mono font-bold uppercase tracking-wider text-zinc-400 mb-2">Community Profile Endpoint</label>
-              <input type="url" placeholder="facebook.com/username" class="w-full bg-zinc-900 border border-zinc-800 rounded-xl p-3.5 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-cyan-400 transition-colors focus:ring-1 focus:ring-cyan-400 min-h-[48px]" required>
-            </div>
-          </div>
+    .countdown { display:flex; gap:10px; margin-bottom:28px; }
+    .cd {
+      text-align:center; min-width:62px;
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:12px 14px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .cd-n { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--red); line-height:1; display:block; }
+    .cd-l { font-family:'Barlow Condensed',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-top:3px; display:block; }
 
-          <div class="pt-4">
-            <button type="submit" class="w-full bg-white hover:bg-cyan-400 text-black font-mono font-bold uppercase text-xs tracking-widest py-4.5 px-4 rounded-xl transition-all duration-200 cursor-pointer min-h-[48px] transform active:scale-[0.99] flex items-center justify-center gap-2">
-              Commit Listing Payload Data &rarr;
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
+    .progress-wrap { margin-bottom:28px; }
+    .prog-bar { height:5px; background:rgba(255,255,255,0.06); border-radius:3px; overflow:hidden; margin-top:7px; }
+    .prog-fill { height:100%; width:73%; background:linear-gradient(90deg,var(--red),var(--purple)); box-shadow:0 0 12px rgba(255,77,109,0.5); animation:fillAnim 2s ease 0.5s both; }
+    @keyframes fillAnim { from{width:0;} to{width:73%;} }
+    .prog-labels { display:flex; justify-content:space-between; font-family:'Barlow Condensed',sans-serif; font-size:11px; color:var(--muted); margin-top:5px; letter-spacing:1px; }
 
-</body>
-</html>
+    .raffle-winners {
+      border-top:1px solid rgba(255,255,255,0.05);
+      padding:24px 56px;
+      display:flex; align-items:center; gap:32px;
+      overflow:hidden;
+    }
+    .winners-label { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+    .winners-list { display:flex; gap:12px; overflow:hidden; }
+    .winner-chip {
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:blur(8px);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:6px 14px; white-space:nowrap;
+      font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:1px; color:rgba(255,255,255,0.5);
+      clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+    }
+    .winner-chip span { color:var(--teal); font-weight:700; }
+
+    /* ── UPCOMING RAFFLES ── */
+    .upcoming-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+    @media (max-width: 992px) { .upcoming-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 576px) { .upcoming-grid { grid-template-columns: 1fr; } }
+    .upcoming-card { padding:28px; cursor:pointer; }
+    .upcoming-card .uc-shoe { font-size:44px; display:block; margin-bottom:14px; }
+    .upcoming-card .uc-brand { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+    .upcoming-card .uc-name { font-family:'Bebas Neue',sans-serif; font-size:26px; color:#fff; line-height:1; margin-bottom:8px; }
+    .upcoming-card .uc-date { font-size:12px; color:var(--muted); margin-bottom:14px; }
+    .uc-badge {
+      display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:800;
+      letter-spacing:2px; text-transform:uppercase; padding:4px 10px; margin-bottom:12px;
+      clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%);
+    }
+    .badge-soon { background:rgba(176,143,255,0.15); color:var(--purple); border:1px solid rgba(176,143,255,0.3); }
+    .badge-open { background:rgba(93,232,216,0.15); color:var(--teal); border:1px solid rgba(93,232,216,0.3); }
+    .badge-sold { background:rgba(255,255,255,0.06); color:var(--muted); border:1px solid rgba(255,255,255,0.1); }
+
+    /* ── DROPS ── */
+    .drops-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    @media (max-width: 992px) { .drops-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) { .drops-grid { grid-template-columns: 1fr; } .drop-card.featured { grid-column: span 1 !important; } }
+    .drop-card { padding:26px; cursor:pointer; }
+    .drop-card.featured { grid-column:span 2; background:linear-gradient(135deg,rgba(93,232,216,0.05),rgba(74,184,240,0.03),rgba(176,143,255,0.04)); border-color:rgba(93,232,216,0.15); }
+    .drop-icon { font-size:52px; display:block; margin:10px 0; filter:drop-shadow(0 4px 14px rgba(93,232,216,0.18)); }
+    .drop-brand { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:3px; }
+    .drop-name { font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; line-height:1; margin-bottom:6px; }
+    .drop-date { font-size:12px; color:var(--muted); margin-bottom:14px; }
+    .drop-price { font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:700; color:var(--green); margin-bottom:16px; }
+    .drop-link { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(93,232,216,0.28); padding-bottom:2px; transition:all 0.2s; }
+    .drop-link:hover { color:#fff; border-color:#fff; }
+    .dbadge { display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; margin-bottom:12px; clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%); }
+    .dbadge-hot { background:rgba(93,232,216,0.15); color:var(--teal); border:1px solid rgba(93,232,216,0.3); }
+    .dbadge-lim { background:rgba(245,168,0,0.15); color:var(--gold); border:1px solid rgba(245,168,0,0.3); }
+    .dbadge-up  { background:rgba(255,255,255,0.05); color:var(--muted); border:1px solid rgba(255,255,255,0.1); }
+
+    /* ── SHOWCASE ── */
+    .showcase-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    @media (max-width: 992px) { .showcase-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .showcase-grid { grid-template-columns: 1fr; } }
+    .sc-card { padding:20px; cursor:pointer; text-align:center; }
+    .sc-shoe { font-size:48px; display:block; margin:10px 0; }
+    .sc-member { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+    .sc-name { font-family:'Bebas Neue',sans-serif; font-size:21px; color:#fff; line-height:1; margin-bottom:8px; }
+    .sc-likes { font-family:'Barlow Condensed',sans-serif; font-size:12px; color:var(--teal); font-weight:700; }
+
+    /* ── MARKETPLACE ── */
+    .market-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media (max-width: 868px) { .market-grid { grid-template-columns: 1fr; } }
+    .market-listing
