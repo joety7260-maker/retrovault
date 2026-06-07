@@ -1,0 +1,39 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="300" fill="rgba(0,5,18,0.4)"/>
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="240" rx="80" ry="15" fill="rgba(0,0,0,0.3)"/>
+  
+  <!-- Air Max 1 'Big Bubble' Silhouette -->
+  <g transform="translate(80, 100)">
+    <!-- Bubble sole (signature) -->
+    <ellipse cx="70" cy="90" rx="60" ry="25" fill="none" stroke="#ff6b35" stroke-width="4" opacity="0.9"/>
+    
+    <!-- Midsole -->
+    <path d="M 15 90 Q 50 95 130 90" fill="none" stroke="#f5a800" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Upper body - toe box -->
+    <path d="M 20 65 Q 25 50 45 45 Q 70 40 100 42 Q 120 44 130 55 Q 132 65 125 75 Q 110 82 90 85 Q 60 88 30 82 Z" fill="none" stroke="#5de8d8" stroke-width="3.5" stroke-linejoin="round"/>
+    
+    <!-- Heel counter -->
+    <path d="M 15 75 Q 12 65 15 50 Q 18 42 28 40" fill="none" stroke="#4ab8f0" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Swoosh detail -->
+    <path d="M 35 58 Q 60 50 110 60" fill="none" stroke="#b08fff" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Accent stitching -->
+    <path d="M 25 72 Q 80 80 125 74" fill="none" stroke="rgba(93,232,216,0.6)" stroke-width="1" stroke-dasharray="3,2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Glow effect -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

@@ -1,0 +1,30 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="300" fill="rgba(0,5,18,0.4)"/>
+  
+  <!-- Shadow -->
+  <ellipse cx="150" cy="240" rx="80" ry="15" fill="rgba(0,0,0,0.3)"/>
+  
+  <!-- Adidas ZX 8000 'Aqua' Silhouette -->
+  <g transform="translate(70, 90)">
+    <!-- Outsole -->
+    <path d="M 25 100 Q 70 105 145 100" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Midsole cushioning -->
+    <path d="M 20 96 Q 70 100 150 96" fill="none" stroke="#00ffcc" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Toe box -->
+    <path d="M 30 70 Q 35 45 60 40 Q 95 35 130 42 Q 145 50 145 65 Q 142 82 125 90 Q 85 92 50 85" fill="none" stroke="#00ffcc" stroke-width="3.5" stroke-linejoin="round"/>
+    
+    <!-- Heel tab -->
+    <path d="M 22 82 Q 18 70 22 50 Q 28 40 42 38" fill="none" stroke="#00ffcc" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- ZX stripes (3 stripes design) -->
+    <path d="M 50 58 Q 90 52 135 60" fill="none" stroke="#ff6b9d" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 48 68 Q 95 65 140 72" fill="none" stroke="#ff6b9d" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 52 78 Q 100 78 145 82" fill="none" stroke="#ff6b9d" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Torsion system accent -->
+    <path d="M 75 88 L 75 82" fill="none" stroke="#5de8d8" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+  </g>
+</svg>
