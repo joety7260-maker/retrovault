@@ -1,0 +1,29 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="100" cy="100" r="95" fill="rgba(0,5,18,0.2)" stroke="rgba(93,232,216,0.3)" stroke-width="2"/>
+  
+  <!-- Sneaker silhouette -->
+  <g transform="translate(50, 60)">
+    <!-- Toe box -->
+    <ellipse cx="35" cy="50" rx="28" ry="18" fill="none" stroke="url(#logoGradient)" stroke-width="2.5"/>
+    <!-- Heel -->
+    <path d="M 15 45 Q 10 40 12 32 Q 15 25 22 28" fill="none" stroke="url(#logoGradient)" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Sole line -->
+    <path d="M 8 52 Q 35 58 65 55" fill="none" stroke="rgba(93,232,216,0.6)" stroke-width="2" stroke-linecap="round" stroke-dasharray="3,2"/>
+    <!-- Upper details -->
+    <path d="M 20 42 Q 50 35 65 42" fill="none" stroke="rgba(74,184,240,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Accent elements -->
+  <circle cx="60" cy="140" r="4" fill="rgba(93,232,216,0.8)"/>
+  <circle cx="140" cy="145" r="3.5" fill="rgba(74,184,240,0.7)"/>
+  <circle cx="100" cy="155" r="3" fill="rgba(176,143,255,0.6)"/>
+  
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5de8d8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4ab8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
