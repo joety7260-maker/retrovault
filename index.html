@@ -27,7 +27,6 @@
       background: #000;
     }
     
-    /* Solid, dependable background container to avoid pseudo-element blanking */
     .bg-system {
       position:fixed; 
       inset:0;
@@ -202,7 +201,7 @@
     }
     @media (max-width: 868px) {
       .raffle-top { grid-template-columns: 1fr; }
-      .raffle-info { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .raffle-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
     }
     .raffle-info { padding:56px; border-right:1px solid rgba(255,255,255,0.06); }
     .raffle-visual {
@@ -211,10 +210,7 @@
       background:rgba(255, 77, 109, 0.03);
     }
     .raffle-shoe-big { font-size:110px; display:block; margin-bottom:12px; filter:drop-shadow(0 10px 30px rgba(255,77,109,0.25)); }
-    .raffle-price-big {
-      font-family:'Bebas Neue',sans-serif; font-size:90px; line-height:1;
-      color: var(--gold);
-    }
+    .raffle-price-big { font-family:'Bebas Neue',sans-serif; font-size:90px; line-height:1; color: var(--gold); }
     .raffle-price-label { font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
 
     .raffle-name { font-family:'Bebas Neue',sans-serif; font-size:56px; line-height:1; color:#fff; margin:12px 0 6px; }
@@ -287,17 +283,6 @@
     .dbadge { display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; margin-bottom:12px; clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%); }
     .dbadge-hot { background:rgba(93,232,216,0.15); color:var(--teal); border:1px solid rgba(93,232,216,0.3); }
     .dbadge-lim { background:rgba(245,168,0,0.15); color:var(--gold); border:1px solid rgba(245,168,0,0.3); }
-    .dbadge-up  { background:rgba(255,255,255,0.05); color:var(--muted); border:1px solid rgba(255,255,255,0.1); }
-
-    /* ── SHOWCASE ── */
-    .showcase-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-    @media (max-width: 992px) { .showcase-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .showcase-grid { grid-template-columns: 1fr; } }
-    .sc-card { padding:20px; cursor:pointer; text-align:center; }
-    .sc-shoe { font-size:48px; display:block; margin:10px 0; }
-    .sc-member { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
-    .sc-name { font-family:'Bebas Neue',sans-serif; font-size:21px; color:#fff; line-height:1; margin-bottom:8px; }
-    .sc-likes { font-family:'Barlow Condensed',sans-serif; font-size:12px; color:var(--teal); font-weight:700; }
 
     /* ── MARKETPLACE ── */
     .market-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -314,7 +299,7 @@
     .listing-action { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--teal); background:rgba(93,232,216,0.1); border:1px solid rgba(93,232,216,0.25); padding:6px 14px; cursor:pointer; clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%); transition:all 0.2s; }
     .listing-action:hover { background:rgba(93,232,216,0.2); }
 
-    /* Form Styles */
+    /* ── FORM CONTROL ── */
     .form-title { font-family:'Bebas Neue',sans-serif; font-size:32px; color:#fff; margin-bottom:6px; }
     .form-sub { font-size:13px; color:var(--muted); margin-bottom:24px; line-height:1.6; }
     .form-group { margin-bottom:16px; }
@@ -332,12 +317,29 @@
 
     /* ── COMPETITIONS ── */
     .comp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    @media (max-width: 768px) { .comp-grid { grid-template-columns: 1fr; } }
     .comp-card { padding:32px; text-align:center; cursor:pointer; }
     .comp-icon { font-size:52px; display:block; margin-bottom:16px; }
     .comp-title { font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; margin-bottom:8px; }
     .comp-desc { font-size:13px; color:var(--muted); line-height:1.7; margin-bottom:20px; }
     .comp-prize { font-family:'Barlow Condensed',sans-serif; font-size:18px; color:var(--gold); font-weight:800; letter-spacing:1px; text-transform:uppercase; }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .upcoming-grid, .drops-grid { grid-template-columns: repeat(2, 1fr); }
+      .drop-card.featured { grid-column: span 2; }
+    }
+    @media (max-width: 868px) {
+      .raffle-top { grid-template-columns: 1fr; }
+      .raffle-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .market-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .comp-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .upcoming-grid, .drops-grid { grid-template-columns: 1fr; }
+      .drop-card.featured { grid-column: span 1; }
+    }
   </style>
 </head>
 <body>
@@ -355,4 +357,214 @@
       <li><a href="#drops">/drops</a></li>
       <li><a href="#marketplace">/marketplace</a></li>
     </ul>
-    <button class="nav-cta" onclick="document.getElementById('marketplace').scrollIntoView();"
+    <button class="nav-cta" onclick="document.getElementById('marketplace').scrollIntoView();">List Pair</button>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-grid"></div>
+    <div class="raffle-live-pill">
+      <span class="pill-dot"></span>
+      <span class="pill-text">Live Allocation Stream Active</span>
+    </div>
+    <div class="hero-logo">
+      <img src="1000100729.png" alt="Trainer Warz Retro Ad Header">
+    </div>
+    <p class="hero-tag">Strictly Retro // Zero Clutter</p>
+    <p class="hero-sub">
+      Engineered for deep collectors. Eliminating template noise to deliver ultra-clean <strong>tier-1 allocations</strong>, 90s archive staples, and direct community flow.
+    </p>
+    <div class="hero-btns">
+      <a href="#drops" class="btn btn-teal">Explore Pipeline</a>
+      <a href="#raffle" class="btn btn-ghost">View Live Event</a>
+    </div>
+  </header>
+
+  <div class="ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">// TRAINER WARZ ADMISSION OPEN</div>
+      <div class="ticker-item">AIR MAX 1 'BIG BUBBLE' STATUS: ALLOCATED</div>
+      <div class="ticker-item">GEL-LYTE III OG 'MITSUI' STATUS: RESTOCKED</div>
+      <div class="ticker-item">ZX 8000 'AQUA' STATUS: 2 PAIRS REMAINING</div>
+      <div class="ticker-item">// TRAINER WARZ ADMISSION OPEN</div>
+      <div class="ticker-item">AIR MAX 1 'BIG BUBBLE' STATUS: ALLOCATED</div>
+      <div class="ticker-item">GEL-LYTE III OG 'MITSUI' STATUS: RESTOCKED</div>
+      <div class="ticker-item">ZX 8000 'AQUA' STATUS: 2 PAIRS REMAINING</div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    
+    <section id="raffle" style="margin-bottom: 100px;">
+      <div class="s-label">Active Matrix</div>
+      <h2 class="s-title">Live Vault Allocations</h2>
+      
+      <div class="raffle-section">
+        <div class="raffle-top">
+          <div class="raffle-info">
+            <span class="uc-badge badge-open">Raffle Open</span>
+            <span class="raffle-brand">Nike Sportswear</span>
+            <h3 class="raffle-name">Air Max 1 'Big Bubble'</h3>
+            <p class="raffle-desc">The authentic 1986 configuration meticulously recreated with a pristine vintage structural midsole and high-contrast color footprint.</p>
+            
+            <div class="countdown">
+              <div class="cd"><span class="cd-n">02</span><span class="cd-l">Days</span></div>
+              <div class="cd"><span class="cd-n">14</span><span class="cd-l">Hrs</span></div>
+              <div class="cd"><span class="cd-n">42</span><span class="cd-l">Min</span></div>
+            </div>
+            
+            <div class="progress-wrap">
+              <div class="prog-labels"><span>Allocation Capacity Filled</span><span>73%</span></div>
+              <div class="prog-bar"><div class="prog-fill"></div></div>
+            </div>
+            
+            <button class="btn btn-raffle" onclick="alert('Ticket generated.');">Enter Premium Ticket Queue</button>
+          </div>
+          
+          <div class="raffle-visual">
+            <span class="raffle-shoe-big">👟</span>
+            <div class="raffle-price-big">$180</div>
+            <div class="raffle-price-label">Retail Allocation Valuation</div>
+          </div>
+        </div>
+        
+        <div class="raffle-winners">
+          <span class="winners-label">Recent Vault Winners:</span>
+          <div class="winners-list">
+            <div class="winner-chip">Ticket #1902 — <span>J. Watson</span></div>
+            <div class="winner-chip">Ticket #0482 — <span>M. Evans</span></div>
+            <div class="winner-chip">Ticket #2219 — <span>S. Clarke</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="upcoming-grid">
+        <div class="gc upcoming-card">
+          <span class="uc-badge badge-soon">Coming Soon</span>
+          <span class="uc-shoe">👟</span>
+          <p class="uc-brand">ASICS Tiger</p>
+          <h4 class="uc-name">Gel-Lyte III 'Mitsui'</h4>
+          <p class="uc-date">Launches June 12</p>
+        </div>
+        <div class="gc upcoming-card">
+          <span class="uc-badge badge-soon">Coming Soon</span>
+          <span class="uc-shoe">👟</span>
+          <p class="uc-brand">Adidas Originals</p>
+          <h4 class="uc-name">ZX 8000 'Aqua'</h4>
+          <p class="uc-date">Launches June 18</p>
+        </div>
+        <div class="gc upcoming-card">
+          <span class="uc-badge badge-sold">Completed</span>
+          <span class="uc-shoe">👟</span>
+          <p class="uc-brand">Nike Sportswear</p>
+          <h4 class="uc-name">Air Max 90 'Infrared'</h4>
+          <p class="uc-date">Allocation Filled</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="drops" style="margin-bottom: 100px;">
+      <div class="s-label">Active Core Engine</div>
+      <h2 class="s-title">Curated Premium Allocations</h2>
+      
+      <div class="drops-grid">
+        <div class="gc drop-card featured">
+          <span class="dbadge dbadge-hot">Priority Tier 1</span>
+          <span class="drop-icon">🚀</span>
+          <p class="drop-brand">Nike Sportswear</p>
+          <h3 class="drop-name">Air Max 1 'Big Bubble' (1986 Archive Spec)</h3>
+          <p class="drop-date">SKU // DQ3989-100</p>
+          <div class="drop-price">$180.00 USD</div>
+          <a href="https://www.nike.com" target="_blank" class="drop-link">Query Retail Allocation Engine &rarr;</a>
+        </div>
+        
+        <div class="gc drop-card">
+          <span class="dbadge dbadge-lim">Archive Tier</span>
+          <span class="drop-icon">⚡</span>
+          <p class="drop-brand">ASICS Tiger</p>
+          <h3 class="drop-name">Gel-Lyte III OG 'Mitsui'</h3>
+          <p class="drop-date">ID // 1201A164-100</p>
+          <div class="drop-price">$140.00</div>
+          <a href="https://www.asics.com" target="_blank" class="drop-link">Verify Supply</a>
+        </div>
+
+        <div class="gc drop-card">
+          <span class="dbadge dbadge-lim">Crown Classic</span>
+          <span class="drop-icon">👑</span>
+          <p class="drop-brand">Adidas Originals</p>
+          <h3 class="drop-name">ZX 8000 'Aqua'</h3>
+          <p class="drop-date">ID // EG8784</p>
+          <div class="drop-price">$130.00</div>
+          <a href="https://www.adidas.com" target="_blank" class="drop-link">Verify Supply</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="marketplace" style="margin-bottom: 100px;">
+      <div class="s-label">Database Configuration Terminal</div>
+      <h2 class="s-title">Community Marketplace</h2>
+      
+      <div class="market-grid">
+        <div class="gc market-listings">
+          <div class="form-title" style="font-size: 24px; margin-bottom: 16px;">Active Network Listings</div>
+          
+          <div class="listing-item">
+            <span class="listing-shoe">👟</span>
+            <div class="listing-info">
+              <h4 class="listing-name">Air Max 1 'Big Bubble'</h4>
+              <p class="listing-meta">Size UK 9.5 // Condition: DS</p>
+            </div>
+            <div class="listing-price" style="margin-right:15px;">$180</div>
+            <button class="listing-action" onclick="alert('Connecting to seller profile...');">Contact</button>
+          </div>
+
+          <div class="listing-item">
+            <span class="listing-shoe">👟</span>
+            <div class="listing-info">
+              <h4 class="listing-name">Gel-Lyte III OG 'Mitsui'</h4>
+              <p class="listing-meta">Size UK 10 // Condition: VNDS</p>
+            </div>
+            <div class="listing-price" style="margin-right:15px;">$140</div>
+            <button class="listing-action" onclick="alert('Connecting to seller profile...');">Contact</button>
+          </div>
+        </div>
+
+        <div class="gc market-form">
+          <h3 class="form-title">Inject Liquidity / List Your Pair</h3>
+          <p class="form-sub">Authenticated structural vintage allocations only.</p>
+          
+          <form onsubmit="event.preventDefault(); alert('Submission processing...');">
+            <div class="form-group">
+              <label class="form-label">Sneaker Taxonomy / Name</label>
+              <input type="text" placeholder="e.g., Air Max 95 Neon" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Style Code / SKU Validation</label>
+              <input type="text" placeholder="e.g., CT1689-001" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Condition Grading Matrix</label>
+              <select class="form-select">
+                <option>Deadstock (DS)</option>
+                <option>VNDS / Near Deadstock</option>
+                <option>Worn / Archive Condition</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Asking Evaluation ($)</label>
+              <input type="number" placeholder="200" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Community Profile Endpoint</label>
+              <input type="url" placeholder="facebook.com/username" class="form-input" required>
+            </div>
+            
+            <button type="submit" class="btn btn-teal" style="width: 100%; text-align: center; margin-top: 10px;">Commit Listing Payload Data &rarr;</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
