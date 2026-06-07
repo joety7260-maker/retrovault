@@ -199,17 +199,12 @@
     .raffle-top {
       display:grid; grid-template-columns:1.3fr 1fr; min-height:460px;
     }
-    @media (max-width: 868px) {
-      .raffle-top { grid-template-columns: 1fr; }
-      .raffle-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
-    }
     .raffle-info { padding:56px; border-right:1px solid rgba(255,255,255,0.06); }
     .raffle-visual {
       display:flex; flex-direction:column; align-items:center; justify-content:center;
       padding:48px; position:relative; overflow:hidden;
       background:rgba(255, 77, 109, 0.03);
     }
-    .raffle-shoe-big { font-size:110px; display:block; margin-bottom:12px; filter:drop-shadow(0 10px 30px rgba(255,77,109,0.25)); }
     .raffle-price-big { font-family:'Bebas Neue',sans-serif; font-size:90px; line-height:1; color: var(--gold); }
     .raffle-price-label { font-family:'Barlow Condensed',sans-serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
 
@@ -251,10 +246,7 @@
 
     /* ── UPCOMING RAFFLES ── */
     .upcoming-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
-    @media (max-width: 992px) { .upcoming-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 576px) { .upcoming-grid { grid-template-columns: 1fr; } }
     .upcoming-card { padding:28px; cursor:pointer; }
-    .upcoming-card .uc-shoe { font-size:44px; display:block; margin-bottom:14px; }
     .upcoming-card .uc-brand { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
     .upcoming-card .uc-name { font-family:'Bebas Neue',sans-serif; font-size:26px; color:#fff; line-height:1; margin-bottom:8px; }
     .upcoming-card .uc-date { font-size:12px; color:var(--muted); margin-bottom:14px; }
@@ -269,16 +261,13 @@
 
     /* ── DROPS ── */
     .drops-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    @media (max-width: 992px) { .drops-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 640px) { .drops-grid { grid-template-columns: 1fr; } .drop-card.featured { grid-column: span 1 !important; } }
     .drop-card { padding:26px; cursor:pointer; }
     .drop-card.featured { grid-column:span 2; background: rgba(93, 232, 216, 0.03); border-color:rgba(93,232,216,0.15); }
-    .drop-image { width:100%; height:200px; object-fit:contain; margin-bottom:16px; border-radius:3px; }
     .drop-brand { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-bottom:3px; }
     .drop-name { font-family:'Bebas Neue',sans-serif; font-size:28px; color:#fff; line-height:1; margin-bottom:6px; }
     .drop-date { font-size:12px; color:var(--muted); margin-bottom:14px; }
     .drop-price { font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:700; color:var(--green); margin-bottom:16px; }
-    .drop-link { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom:1px solid var(--teal); transition:all 0.2s; }
+    .drop-link { font-family:'Barlow Condensed',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom:1px solid rgba(93,232,216,0.28); padding-bottom:2px; transition:all 0.2s; }
     .drop-link:hover { color:#fff; border-color:#fff; }
     .dbadge { display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; margin-bottom:12px; clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%); }
     .dbadge-hot { background:rgba(93,232,216,0.15); color:var(--teal); border:1px solid rgba(93,232,216,0.3); }
@@ -286,17 +275,15 @@
 
     /* ── MARKETPLACE ── */
     .market-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    @media (max-width: 868px) { .market-grid { grid-template-columns: 1fr; } }
     .market-listings { padding:36px; }
     .market-form { padding:36px; background: rgba(176, 143, 255, 0.02); border-color:rgba(176,143,255,0.12); }
     .listing-item { display:flex; align-items:center; gap:16px; padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
     .listing-item:last-child { border-bottom:none; }
-    .listing-shoe { font-size:36px; }
     .listing-info { flex:1; }
     .listing-name { font-family:'Bebas Neue',sans-serif; font-size:22px; color:#fff; line-height:1; }
     .listing-meta { font-family:'Barlow Condensed',sans-serif; font-size:11px; letter-spacing:1px; color:var(--muted); margin-top:3px; }
     .listing-price { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; color:var(--green); }
-    .listing-action { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--teal); background:rgba(93,232,216,0.1); border:1px solid rgba(93,232,216,0.3); padding:6px 12px; cursor:pointer; transition:all 0.2s; clip-path:polygon(3px 0%,100% 0%,calc(100% - 3px) 100%,0% 100%); }
+    .listing-action { font-family:'Barlow Condensed',sans-serif; font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--teal); background:rgba(93,232,216,0.1); border:1px solid rgba(93,232,216,0.25); padding:6px 14px; cursor:pointer; clip-path:polygon(5px 0%,100% 0%,calc(100% - 5px) 100%,0% 100%); transition:all 0.2s; }
     .listing-action:hover { background:rgba(93,232,216,0.2); }
 
     /* ── FORM CONTROL ── */
@@ -349,7 +336,7 @@
 
   <nav>
     <a href="#" class="nav-logo">
-      <img src="logo.svg" alt="Trainer Warz Logo">
+      <img src="1000100729.png" alt="Trainer Warz Logo">
       <span>TRAINER<em>WARZ</em></span>
     </a>
     <ul class="nav-links">
@@ -367,7 +354,7 @@
       <span class="pill-text">Live Allocation Stream Active</span>
     </div>
     <div class="hero-logo">
-      <img src="logo.svg" alt="Trainer Warz Retro Ad Header">
+      <img src="1000100729.png" alt="Trainer Warz Retro Ad Header">
     </div>
     <p class="hero-tag">Strictly Retro // Zero Clutter</p>
     <p class="hero-sub">
@@ -383,188 +370,8 @@
     <div class="ticker-track">
       <div class="ticker-item">// TRAINER WARZ ADMISSION OPEN</div>
       <div class="ticker-item">AIR MAX 1 'BIG BUBBLE' STATUS: ALLOCATED</div>
-      <div class="ticker-item">GEL-LYTE III OG 'MITSUI' STATUS: RESTOCKED</div>
-      <div class="ticker-item">ZX 8000 'AQUA' STATUS: 2 PAIRS REMAINING</div>
+      <div class="ticker-item">GEL-LYTE III 'SHIGEYUKI MITSUI' STATUS: LAUNCHED</div>
+      <div class="ticker-item">ADIDAS AE 1 'ASCENT' STATUS: LOW STOCK // DISTRO ACTIVE</div>
       <div class="ticker-item">// TRAINER WARZ ADMISSION OPEN</div>
       <div class="ticker-item">AIR MAX 1 'BIG BUBBLE' STATUS: ALLOCATED</div>
-      <div class="ticker-item">GEL-LYTE III OG 'MITSUI' STATUS: RESTOCKED</div>
-      <div class="ticker-item">ZX 8000 'AQUA' STATUS: 2 PAIRS REMAINING</div>
-    </div>
-  </div>
-
-  <main class="wrap">
-    
-    <section id="raffle" style="margin-bottom: 100px;">
-      <div class="s-label">Active Matrix</div>
-      <h2 class="s-title">Live Vault Allocations</h2>
-      
-      <div class="raffle-section">
-        <div class="raffle-top">
-          <div class="raffle-info">
-            <span class="uc-badge badge-open">Raffle Open</span>
-            <span class="raffle-brand">Nike Sportswear</span>
-            <h3 class="raffle-name">Air Max 1 'Big Bubble'</h3>
-            <p class="raffle-desc">The authentic 1986 configuration meticulously recreated with a pristine vintage structural midsole and high-contrast color footprint.</p>
-            
-            <div class="countdown">
-              <div class="cd"><span class="cd-n">02</span><span class="cd-l">Days</span></div>
-              <div class="cd"><span class="cd-n">14</span><span class="cd-l">Hrs</span></div>
-              <div class="cd"><span class="cd-n">42</span><span class="cd-l">Min</span></div>
-            </div>
-            
-            <div class="progress-wrap">
-              <div class="prog-labels"><span>Allocation Capacity Filled</span><span>73%</span></div>
-              <div class="prog-bar"><div class="prog-fill"></div></div>
-            </div>
-            
-            <button class="btn btn-raffle" onclick="alert('Ticket generated.');">Enter Premium Ticket Queue</button>
-          </div>
-          
-          <div class="raffle-visual">
-            <span class="raffle-shoe-big">👟</span>
-            <div class="raffle-price-big">$180</div>
-            <div class="raffle-price-label">Retail Allocation Valuation</div>
-          </div>
-        </div>
-        
-        <div class="raffle-winners">
-          <span class="winners-label">Recent Vault Winners:</span>
-          <div class="winners-list">
-            <div class="winner-chip">Ticket #1902 — <span>J. Watson</span></div>
-            <div class="winner-chip">Ticket #0482 — <span>M. Evans</span></div>
-            <div class="winner-chip">Ticket #2219 — <span>S. Clarke</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="upcoming-grid">
-        <div class="gc upcoming-card">
-          <span class="uc-badge badge-soon">Coming Soon</span>
-          <span class="uc-shoe">👟</span>
-          <p class="uc-brand">ASICS Tiger</p>
-          <h4 class="uc-name">Gel-Lyte III 'Mitsui'</h4>
-          <p class="uc-date">Launches June 12</p>
-        </div>
-        <div class="gc upcoming-card">
-          <span class="uc-badge badge-soon">Coming Soon</span>
-          <span class="uc-shoe">👟</span>
-          <p class="uc-brand">Adidas Originals</p>
-          <h4 class="uc-name">ZX 8000 'Aqua'</h4>
-          <p class="uc-date">Launches June 18</p>
-        </div>
-        <div class="gc upcoming-card">
-          <span class="uc-badge badge-sold">Completed</span>
-          <span class="uc-shoe">👟</span>
-          <p class="uc-brand">Nike Sportswear</p>
-          <h4 class="uc-name">Air Max 90 'Infrared'</h4>
-          <p class="uc-date">Allocation Filled</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="drops" style="margin-bottom: 100px;">
-      <div class="s-label">Active Core Engine</div>
-      <h2 class="s-title">Curated Premium Allocations</h2>
-      
-      <div class="drops-grid">
-        <div class="gc drop-card featured">
-          <span class="dbadge dbadge-hot">Priority Tier 1</span>
-          <img src="airmax1-bubble.svg" alt="Nike Air Max 1 Big Bubble" class="drop-image">
-          <p class="drop-brand">Nike Sportswear</p>
-          <h3 class="drop-name">Air Max 1 'Big Bubble' (1986 Archive Spec)</h3>
-          <p class="drop-date">SKU // DQ3989-100</p>
-          <div class="drop-price">$180.00 USD</div>
-          <a href="https://www.nike.com" target="_blank" class="drop-link">Query Retail Allocation Engine &rarr;</a>
-        </div>
-        
-        <div class="gc drop-card">
-          <span class="dbadge dbadge-lim">Archive Tier</span>
-          <img src="gellyite-mitsui.svg" alt="ASICS Gel-Lyte III Mitsui" class="drop-image">
-          <p class="drop-brand">ASICS Tiger</p>
-          <h3 class="drop-name">Gel-Lyte III OG 'Mitsui'</h3>
-          <p class="drop-date">ID // 1201A164-100</p>
-          <div class="drop-price">$140.00</div>
-          <a href="https://www.asics.com" target="_blank" class="drop-link">Verify Supply</a>
-        </div>
-
-        <div class="gc drop-card">
-          <span class="dbadge dbadge-lim">Crown Classic</span>
-          <img src="zx8000-aqua.svg" alt="Adidas ZX 8000 Aqua" class="drop-image">
-          <p class="drop-brand">Adidas Originals</p>
-          <h3 class="drop-name">ZX 8000 'Aqua'</h3>
-          <p class="drop-date">ID // EG8784</p>
-          <div class="drop-price">$130.00</div>
-          <a href="https://www.adidas.com" target="_blank" class="drop-link">Verify Supply</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="marketplace" style="margin-bottom: 100px;">
-      <div class="s-label">Database Configuration Terminal</div>
-      <h2 class="s-title">Community Marketplace</h2>
-      
-      <div class="market-grid">
-        <div class="gc market-listings">
-          <div class="form-title" style="font-size: 24px; margin-bottom: 16px;">Active Network Listings</div>
-          
-          <div class="listing-item">
-            <span class="listing-shoe">👟</span>
-            <div class="listing-info">
-              <h4 class="listing-name">Air Max 1 'Big Bubble'</h4>
-              <p class="listing-meta">Size UK 9.5 // Condition: DS</p>
-            </div>
-            <div class="listing-price" style="margin-right:15px;">$180</div>
-            <button class="listing-action" onclick="alert('Connecting to seller profile...');">Contact</button>
-          </div>
-
-          <div class="listing-item">
-            <span class="listing-shoe">👟</span>
-            <div class="listing-info">
-              <h4 class="listing-name">Gel-Lyte III OG 'Mitsui'</h4>
-              <p class="listing-meta">Size UK 10 // Condition: VNDS</p>
-            </div>
-            <div class="listing-price" style="margin-right:15px;">$140</div>
-            <button class="listing-action" onclick="alert('Connecting to seller profile...');">Contact</button>
-          </div>
-        </div>
-
-        <div class="gc market-form">
-          <h3 class="form-title">Inject Liquidity / List Your Pair</h3>
-          <p class="form-sub">Authenticated structural vintage allocations only.</p>
-          
-          <form onsubmit="event.preventDefault(); alert('Submission processing...');">
-            <div class="form-group">
-              <label class="form-label">Sneaker Taxonomy / Name</label>
-              <input type="text" placeholder="e.g., Air Max 95 Neon" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Style Code / SKU Validation</label>
-              <input type="text" placeholder="e.g., CT1689-001" class="form-input">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Condition Grading Matrix</label>
-              <select class="form-select">
-                <option>Deadstock (DS)</option>
-                <option>VNDS / Near Deadstock</option>
-                <option>Worn / Archive Condition</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Asking Evaluation ($)</label>
-              <input type="number" placeholder="200" class="form-input" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Community Profile Endpoint</label>
-              <input type="url" placeholder="facebook.com/username" class="form-input" required>
-            </div>
-            
-            <button type="submit" class="btn btn-teal" style="width: 100%; text-align: center; margin-top: 10px;">Commit Listing Payload Data &rarr;</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-</body>
-</html>
+      <div class="ticker-item">GEL-LYTE III 'SHIGEYUKI MITSUI' STATUS: LAUNCHED</d
